@@ -32,3 +32,14 @@
   Classic English auction.
   
   Initially, the goods have a certain value, then the auction participants make bids and the participant who made the highest bid wins.
+
+
+  
+
+**Dutch Auction**
+
+Unlike a traditional auction, a maximum price is initially set (`startingPrice`), and if there are no buyers for this price, the price is reduced by set amount (`discountRate`).
+
+ - `getPrice` function returns the current price for an item.
+ - 
+ - `buy` function allows user to buy an item.
