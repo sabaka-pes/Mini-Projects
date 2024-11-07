@@ -41,5 +41,17 @@
 Unlike a traditional auction, a maximum price is initially set (`startingPrice`), and if there are no buyers for this price, the price is reduced by set amount (`discountRate`).
 
  - `getPrice` function returns the current price for an item.
- - 
+
  - `buy` function allows user to buy an item.
+
+
+**Staking**
+
+There are two types of tokens: staking token (the token that will be credited to the contract account) and rewarding token (reward for accrual of staking tokens).
+The user deposits a staking token and receives a percentage reward in rewarding tokens.
+
+The main logic of the program is contained in `StakingAlg.sol`. The reward is recalculated in blocks so as not to count each time from the moment the smart contract is created.
+
+Note: project should contain `ERC20.sol`, `IERC20.sol`, `IERC20Metadata.sol`.
+
+
