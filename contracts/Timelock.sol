@@ -120,3 +120,28 @@ contract Timelock {
         delete queuedTxs[_txId];
     } 
 }
+
+contract Runner {
+    address public lock;
+    string public message;
+    mapping(address => uint) public payments;
+
+    constructor(address _lock) {
+        lock = _lock;
+    }
+
+    function run(string memory newMsg) external payable {
+        require(msg.sender == lock, "invalid address");
+
+        payments[msg.sender] += msg.value;
+        message = newMsg;
+    }
+
+    function newTimestamp() external view returns(uint) {
+        return block.timestamp + 20;
+    }
+
+    function prepareData(string calldata _msg) external pure returns(bytes memory) {
+        return abi.encode(_msg);
+    }
+}
