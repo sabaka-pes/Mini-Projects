@@ -54,4 +54,6 @@ The main logic of the program is contained in `StakingAlg.sol`. The reward is re
 
 Note: project should contain `ERC20.sol`, `IERC20.sol`, `IERC20Metadata.sol`.
 
+**Timelock**
 
+This contract implements the ability to postpone a transaction for some time and execute it when a certain time comes. This is necessary, for example, to be able to analyze the transaction and make sure that it is not malicious. Another example of use: let's say you have an ERC20 token and someone from your team wants to perform a mint, for this they can postpone this transaction so that other members of your team can review and possibly refuse this transaction.
